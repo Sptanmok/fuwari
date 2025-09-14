@@ -65,7 +65,7 @@ sudo apt install build-essential libpcre3 libpcre3-dev zlib1g zlib1g-dev libssl-
 
 如果你是升级就输入make，如果你是安装就输入make install
 
-<div class="admonition shadow-sm admonition-primary"><div class="admonition-body">注意：如果已经安装nginx，输入make install会覆盖原来目录下的nginx</div></div>回车后没有意外的情况下你就可以看到Nginx 安装/升级 完毕
+<div class="admonition-body">注意：如果已经安装nginx，输入make install会覆盖原来目录下的nginx</div>回车后没有意外的情况下你就可以看到Nginx 安装/升级 完毕
 
 此时Nginx的程序路径应该是/usr/local/nginx/sbin/nginx （升级的话程序路径原封不动，把下文的Nginx程序路径改成你原先Nginx程序路径）
 
