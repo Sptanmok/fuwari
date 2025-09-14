@@ -1,35 +1,34 @@
 ---
-title: HP t420瘦客户机改造
-published: 2025-04-05
-description: "这个瘦客户机是很早之前就有了，闲置了一段时间，现在找出来水一期文章。 外观和配置 HP t420在去年带电源售价的是90左右，几乎没什么人买，因为在这个价位有更好的选择，而今年几乎已经找不到了 这是它 [&hellip;]"
-tags: [服务器/端, 硬件]
-categories:  服务器/端 硬件
+title: "HP t420瘦客户机改造"
+date: 2025-04-05
+categories: 
+  - "服务器-端"
+  - "pc"
 ---
+
 这个瘦客户机是很早之前就有了，闲置了一段时间，现在找出来水一期文章。
 
-外观和配置
------
+## 外观和配置
 
 HP t420在去年带电源售价的是90左右，几乎没什么人买，因为在这个价位有更好的选择，而今年几乎已经找不到了
 
-![](data:image/svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+)
+![](https://emnasop.cn/wp-content/uploads/2025/04/IMG_20250405_234529-225x300.jpg)
 
 这是它的外观，平平无奇，符合大部分HP瘦客户机的样子，外置IO方面给了6个USB2.0，一个千兆网口，视频输出方面给了一个DVI-D和一个VGA
 
-![](data:image/svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+)
+![](https://emnasop.cn/wp-content/uploads/2025/04/IMG_20250121_214014-300x225.jpg)
 
 进入BIOS一看，居然使用了主频高达1000000kHz（1GHz）的双核处理器，还使用了高达2097152kb（2GB)的内存，不知道能用它来干嘛
 
-<div class="fancybox-wrapper lazyload-container-unload" data-fancybox="post-images" href="https://emnasop.cn/wp-content/uploads/2025/04/cgi-bin_mmwebwx-bin_webwxgetmsgimg__MsgID629167294948927129skey@crypt_7f3be9dc_b79c2a772d0ea9d801968bf869cf2c74mmweb_appidwx_webfilehelper-247x300.jpg">![](data:image/svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+)卖家提供的图
+\[caption id="attachment\_104" align="alignnone" width="386"\]![](https://emnasop.cn/wp-content/uploads/2025/04/cgi-bin_mmwebwx-bin_webwxgetmsgimg__MsgID629167294948927129skey@crypt_7f3be9dc_b79c2a772d0ea9d801968bf869cf2c74mmweb_appidwx_webfilehelper-247x300.jpg) 卖家提供的图\[/caption\]
 
-</div>打开它的天灵盖一看，居然全身上下只有一个硬盘能更换，这个硬盘居然还是用usb3.0接口，直接让后面的ghost恢复无从下手，更重要的是这个硬盘只有8GB，不是隔壁瘦客户机都16GB了你才8GB？
+打开它的天灵盖一看，居然全身上下只有一个硬盘能更换，这个硬盘居然还是用usb3.0接口，直接让后面的ghost恢复无从下手，更重要的是这个硬盘只有8GB，不是隔壁瘦客户机都16GB了你才8GB？
 
 右上角有一个接口，它是msata吗？它确实是msata，但是它只支持无线网卡，并且有一些网卡还不一定识别，为了这个接口我还损失了两个sata扩展卡
 
 那么外观看完了，开始安装系统吧
 
-进行折腾
-----
+## 进行折腾
 
 先进PE跑跑分，CPU-Z单核60左右多核120左右，至少比Pentium 4强
 

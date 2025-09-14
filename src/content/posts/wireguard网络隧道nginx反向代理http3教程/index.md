@@ -1,14 +1,15 @@
 ---
-title: WireGuard网络隧道+假TCP+Nginx反向代理实现HTTP3教程
-published: 2025-06-29
-description: "本网站已搭载http3（仅在http响应头头部servernode信息不包含frp时才支持，因为目前frp尚未支持http3），本文中源站主机默认指没有独立ip为nat的主机 在跳板机安装支持HTTP [&hellip;]"
-tags: [教程, 服务器/端, 软件]
-categories:  教程 服务器/端 软件
+title: "WireGuard网络隧道+假TCP+Nginx反向代理实现HTTP3教程"
+date: 2025-06-29
+categories: 
+  - "教程"
+  - "服务器-端"
+  - "软件"
 ---
+
 本网站已搭载http3（仅在http响应头头部servernode信息不包含frp时才支持，因为目前frp尚未支持http3），本文中源站主机默认指没有独立ip为nat的主机
 
-在跳板机安装支持HTTP3的Nginx并配置
-----------------------
+## 在跳板机安装支持HTTP3的Nginx并配置
 
 nginx在1.25.0开始支持HTTP3，所以你需要安装≥1.25.0版本的Nginx，如果你已经安装了≥1.25.0版本的Nginx版本可以跳过下载安装步骤
 
@@ -16,8 +17,7 @@ nginx在1.25.0开始支持HTTP3，所以你需要安装≥1.25.0版本的Nginx�
 
 所以本文讲述从源码编译下载安装Nginx
 
-本文以nginx1.26.3为例，如果你想要其他版本可以到[nginx：下载](https://nginx.org/en/download.html)去获得其他版本，然后在文中替换相关内容即可  
-如果你的主机内已经安装了nginx，可以输入nginx -V复制configure arguments:后面的内容，以延续nginx之前的配置
+本文以nginx1.26.3为例，如果你想要其他版本可以到[nginx：下载](https://nginx.org/en/download.html)去获得其他版本，然后在文中替换相关内容即可 如果你的主机内已经安装了nginx，可以输入nginx -V复制configure arguments:后面的内容，以延续nginx之前的配置
 
 在linux主机（新建一个文件夹），然后进入
 
@@ -51,7 +51,7 @@ cd nginx-1.26.3
 ./configure 刚才复制的内容 --with-http_v3_module
 ```
 
-如果你还没有安装Nginx，可以输入（这段配置已经提供大多数必要的组件，如有需要可以再添加，添加–prefix=/usr/local/nginx是为了讲解方便）
+如果你还没有安装Nginx，可以输入（这段配置已经提供大多数必要的组件，如有需要可以再添加，添加--prefix=/usr/local/nginx是为了讲解方便）
 
 ```
 ./configure --prefix=/usr/local/nginx --with-http_stub_status_module --with-http_sub_module --with-http_ssl_module --with-http_v2_module --with-http_v3_module --with-http_realip_module
@@ -65,7 +65,9 @@ sudo apt install build-essential libpcre3 libpcre3-dev zlib1g zlib1g-dev libssl-
 
 如果你是升级就输入make，如果你是安装就输入make install
 
-<div class="admonition-body">注意：如果已经安装nginx，输入make install会覆盖原来目录下的nginx</div>回车后没有意外的情况下你就可以看到Nginx 安装/升级 完毕
+\[admonition\]注意：如果已经安装nginx，输入make install会覆盖原来目录下的nginx\[/admonition\]
+
+回车后没有意外的情况下你就可以看到Nginx 安装/升级 完毕
 
 此时Nginx的程序路径应该是/usr/local/nginx/sbin/nginx （升级的话程序路径原封不动，把下文的Nginx程序路径改成你原先Nginx程序路径）
 
@@ -117,6 +119,7 @@ server {
   keepalive_requests 1000;
  }
 }
+
 ```
 
 如果你已经拥有了相关配置，只需要支持http3，则只需要在server块中添加
@@ -124,17 +127,17 @@ server {
 ```
 listen 443 quic reuseport;
 add_header Alt-Svc 'h3=":443"; h3-29=":443"; h3-Q050=":443"; ma=86400, h2=":443";
+
 ```
 
 然后输入/usr/local/nginx/sbin/nginx 回车运行即可，你也可以把它加入到systemctl中
 
-安装与配置WireGuard
---------------
+## 安装与配置WireGuard
 
 在源站主机和跳板机都安装WireGuard
 
 ```
-sudo<span style="background-color: #ffffff;"> </span><span class="token function" style="background-color: #ffffff;">apt</span><span style="background-color: #ffffff;"> </span><span class="token function" style="background-color: #ffffff;">install</span><span style="background-color: #ffffff;"> </span><span class="token parameter variable" style="background-color: #ffffff;">-y</span><span style="background-color: #ffffff;"> wireguard</span>
+sudo apt install -y wireguard
 ```
 
 在任意安装了WireGuard的主机内任意准备一个空文件夹，在里面输入
@@ -151,8 +154,7 @@ wg genkey > server.key
 wg pubkey < server.key > server.key.pub
 ```
 
-回车，生成源站主机连接时所用的公钥文件  
-输入
+回车，生成源站主机连接时所用的公钥文件 输入
 
 ```
 wg genkey > clients.key
@@ -210,6 +212,7 @@ MTU = 1300 #与源站主机配置保持一致，下文不再赘述
 [Peer]
 PublicKey = <源站主机的公钥>
 AllowedIPs = 10.0.0.1/32
+
 ```
 
 然后两台主机都按Esc退出编辑模式再输入:wq回车退出并保存
@@ -217,13 +220,12 @@ AllowedIPs = 10.0.0.1/32
 两台主机再通过以下命令启动服务
 
 ```
-<span class="token function" style="font-family: Consolas, Monaco, monospace;">sudo</span><span style="font-family: Consolas, Monaco, monospace;"> systemctl </span><span class="token builtin class-name" style="font-family: Consolas, Monaco, monospace;">enable</span> <span class="token parameter variable" style="font-family: Consolas, Monaco, monospace;">--now</span><span style="font-family: Consolas, Monaco, monospace;"> wg-quick@wg0</span>
+sudo systemctl enable --now wg-quick@wg0
 ```
 
 这样WireGuard与Nginx就算是配置的差不多了，此时应该可以用HTTP3访问了
 
-udp伪装tcp
---------
+## udp伪装tcp
 
 因为某些原因，大陆内与大陆外的主机使用WireGuard组网可能会导致运营商封端口，tcp相对比udp安全，所以将udp伪装成tcp比较有必要（但是仍然有几率）。目前比较主流的有两个方式，我分开讲
 
@@ -245,6 +247,7 @@ PostDown = killall <你的udp2raw程序名> || true
 [Peer]
 PublicKey = <源站主机的公钥>
 AllowedIPs = 10.0.0.1/32
+
 ```
 
 把你的源站主机WireGuard配置成以下内容
@@ -265,6 +268,7 @@ PublicKey = <跳板机的公钥>
 AllowedIPs = 10.0.0.2/32
 Endpoint = 127.0.0.2:3333
 PersistentKeepalive = 25
+
 ```
 
 然后重启两端的WireGuard
@@ -273,8 +277,7 @@ PersistentKeepalive = 25
 sudo systemctl restart wg-quick@wg0
 ```
 
-那么一切就大概率大功告成了，如果无法连接，你可以看看两端的/var/log/udp2raw.log文件  
-如果你不喜欢udp2raw，那么还有更好的选择：phantun
+那么一切就大概率大功告成了，如果无法连接，你可以看看两端的/var/log/udp2raw.log文件 如果你不喜欢udp2raw，那么还有更好的选择：phantun
 
 ### 使用Phantun伪装
 
@@ -325,6 +328,7 @@ PublicKey = <跳板机的公钥>
 AllowedIPs = 10.0.0.2/32
 Endpoint = 127.0.0.1:3333
 PersistentKeepalive = 25
+
 ```
 
 然后把你的跳板机WireGuard配置成以下内容
@@ -341,6 +345,7 @@ PostDown = killall phantun_server || true
 [Peer] 
 PublicKey = <源站主机的公钥>
 AllowedIPs = 10.0.0.1/32
+
 ```
 
 然后重启两端的WireGuard

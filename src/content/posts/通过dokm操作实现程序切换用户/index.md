@@ -1,10 +1,12 @@
 ---
-title: 通过DOKM操作实现程序切换用户
-published: 2025-06-08
-description: "本文以cmd为例，将它改为System账号 原理 每个程序都有一个EPROCESS结构体，每个程序的EPROCESS都有一个 Token，它定义了该进程的安全上下文（用户身份、权限等），我们可以通过W [&hellip;]"
-tags: [Windows, 攻击, 教程]
-categories:  Windows 攻击 教程
+title: "通过DOKM操作实现程序切换用户"
+date: 2025-06-08
+categories: 
+  - "windows"
+  - "攻击"
+  - "教程"
 ---
+
 本文以cmd为例，将它改为System账号
 
 ### 原理
@@ -21,11 +23,11 @@ categories:  Windows 攻击 教程
 bcdedit -debug on
 ```
 
-至此WinDbg安装完毕，并且<span class=" ">本地</span><span class=" ">内核</span><span class=" tta_align">调试功能开启</span>
+至此WinDbg安装完毕，并且本地内核调试功能开启
 
 ### 获取System用户令牌
 
-打开WinDbg，点击左上角文件，在Start debugging栏处有Attach to kernel 选项，点击它，在最右侧栏处有一个Local选项点击它,再点击OK，就是点击文件后再“Start debugging” → “Attach to kernel” → “Local” → “OK”
+打开WinDbg，点击左上角文件，在Start debugging栏处有Attach to kernel 选项，点击它，在最右侧栏处有一个Local选项点击它,再点击OK，就是点击文件后再“Start debugging” → “Attach to kernel” → “Local” → “OK"
 
 此时会显示命令行，我们可以通过任务管理器得知System进程的PID是4，而它的HEX也是4
 

@@ -1,0 +1,34 @@
+---
+title: "我的世界基岩版海绵宝宝DLC（世界模板）最新版免费下载"
+date: 2023-05-03
+categories: 
+  - "我的世界"
+  - "福利"
+draft: true
+---
+
+## 游玩视频
+
+[点击下载视频](https://qicaiyun.sharepoint.cn/sites/aa/_layouts/15/download.aspx?UniqueId=bb0dcb84-9da8-4339-9201-40337ca6e742&Translate=false&tempauth=eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0.eyJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvcWljYWl5dW4uc2hhcmVwb2ludC5jbkBjMjgzNTg2My00NDM0LTRhYWItYTMyYi1jMzYxNGIzNjFlYjIiLCJpc3MiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAiLCJuYmYiOiIxNjgzMDk2MDk3IiwiZXhwIjoiMTY4MzA5OTY5NyIsImVuZHBvaW50dXJsIjoidjlRck82eFpxYUdDenl4ZDlpYWJVMW9CRmNQR2VidGdBS1lCUmNvWnZCaz0iLCJlbmRwb2ludHVybExlbmd0aCI6IjEyNyIsImlzbG9vcGJhY2siOiJUcnVlIiwiY2lkIjoiTWpnNE1UZ3haRGt0WmpjM055MDBaV0l4TFRreFlqTXRaR05qTXpJd04yVTFNV0ptIiwidmVyIjoiaGFzaGVkcHJvb2Z0b2tlbiIsInNpdGVpZCI6IlpEVXlOMlk1TlRBdE4yVXpaaTAwWlRRMExXRXpNVFF0T1dFME1XTm1ZamczTTJFNSIsImFwcF9kaXNwbGF5bmFtZSI6ImFhIiwiYXBwaWQiOiJjMDE1ZTJjNC03NWUzLTQxZmYtODQxOS04NjY1NzM1ZTAzNDIiLCJ0aWQiOiJjMjgzNTg2My00NDM0LTRhYWItYTMyYi1jMzYxNGIzNjFlYjIiLCJ1cG4iOiJhYUBxaWNhaXl1bi5wYXJ0bmVyLm9ubXNjaGluYS5jbiIsInB1aWQiOiIxMDAzMzIzMEM1RjIzMDg2IiwiY2FjaGVrZXkiOiIwaC5mfG1lbWJlcnNoaXB8MTAwMzMyMzBjNWYyMzA4NkBsaXZlLmNvbSIsInNjcCI6ImFsbGZpbGVzLndyaXRlIiwidHQiOiIyIiwidXNlUGVyc2lzdGVudENvb2tpZSI6bnVsbCwiaXBhZGRyIjoiNTIuMTMwLjEwLjE2NCJ9.ank0S2g2dGN4WnVGOGowN1J0QlY4SGFsVTgwOXJGSWZHUVNVWkt2bFBLTT0&ApiVersion=2.0)
+
+## 使用方法
+
+把压缩包里的文件解压到以下路径
+
+```
+C:\Users\86198\AppData\Local\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\LocalState\premium_cache\world_templates
+```
+
+或者
+
+```
+C:\Users\86198\AppData\Local\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\LocalState\games\com.mojang\world_templates
+```
+
+（解压记得保留压缩包原本的文件夹）
+
+然后重启游戏就可以了
+
+## 下载链接
+
+[点这里下载https://cloud.06dn.com/s/vKDQue](https://cloud.06dn.com/s/vKDQue)

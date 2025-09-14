@@ -1,10 +1,11 @@
 ---
-title: DOS扩展器
-published: 2023-03-17
-description: "PS：用于是我之前的小站的文章，所以下载链接可能显示错误，但是我会在评论区重新发送下载链接 因为8086处理器的寻址空间只用1MB，于是微软公司就把MS-DOS的DOS模式下的最大存储空间设为1MB， [&hellip;]"
-tags: [DOS系统, 软件]
-categories:  DOS系统 软件
+title: "DOS扩展器"
+date: 2023-03-17
+categories: 
+  - "dos"
+  - "软件"
 ---
+
 ### PS：用于是我之前的小站的文章，所以下载链接可能显示错误，但是我会在评论区重新发送下载链接
 
 因为8086处理器的寻址空间只用1MB，于是微软公司就把MS-DOS的DOS模式下的最大存储空间设为1MB，把360kb留给了系统驱动使用，剩下的640kb才是软件能用的(其实也可以用LH命令把程序使用的内存改成系统应用)
@@ -15,13 +16,13 @@ categories:  DOS系统 软件
 
 这个文件是一部分DOS软件的重要文件，DPMI是供DOS扩展器使用的接口，在DOS扩展器上运行的32位应用程序应该调用DOS扩展器的功能，不应该直接调用DPMI。
 
-下载链接:<https://dosgames.com/files/cwsdpmi.zip>
+下载链接:[https://dosgames.com/files/cwsdpmi.zip](https://dosgames.com/files/cwsdpmi.zip)
 
 ### DOS/4GW扩展器
 
 这是一些dos软件或游戏需要的文件，它可以让软件访问最大4g内存
 
-下载链接:<https://dosgames.com/files/dos4gw.zip>
+下载链接:[https://dosgames.com/files/dos4gw.zip](https://dosgames.com/files/dos4gw.zip)
 
 ### HX DOS-Extender
 

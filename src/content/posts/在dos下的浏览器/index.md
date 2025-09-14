@@ -1,26 +1,26 @@
 ---
-title: 在DOS下的浏览器
-published: 2023-03-27
-description: "ps：由于是网站之前的文章，所以在最新版本的Wordpress可能会有bug，图片原文件已经全部扑街了 让DOS连接网络 注：如果你没有安装鼠标驱动，你需要先安装鼠标驱动 想让DOS连接网络，就要先安 [&hellip;]"
-tags: [DOS系统, 教程]
-categories:  DOS系统 教程
+title: "在DOS下的浏览器"
+date: 2023-03-27
+categories: 
+  - "dos"
+  - "教程"
 ---
+
 #### ps：由于是网站之前的文章，所以在最新版本的Wordpress可能会有bug，图片原文件已经全部扑街了
 
-**让DOS连接网络**
-------------
+## **让****DOS****连接网络**
 
 注：如果你没有安装鼠标驱动，你需要先安装鼠标驱动
 
 想让DOS连接网络，就要先安装网卡驱动
 
-安装网卡驱动需要Microsoft Network Client for DOS<u>软盘</u>
+安装网卡驱动需要Microsoft Network Client for DOS软盘
 
 至于安装过程我就不多说了，[点击这里查看Microsoft Network Client for DOS安装教程和下载链接](http://www.kompx.com/en/network-setup-in-dos-microsoft-network-client.htm)
 
 如果你觉得麻烦可以直接使用AMD的Packet Driver驱动
 
-这是这个驱动的下载链接:<https://www.123pan.com/s/9piDVv-6OkVv.html>提取码:0M3f
+这是这个驱动的下载链接:[https://www.123pan.com/s/9piDVv-6OkVv.html](https://www.123pan.com/s/9piDVv-6OkVv.html)提取码:0M3f
 
 这个驱动的运行代码是:
 
@@ -34,7 +34,7 @@ categories:  DOS系统 教程
 
 ### 若是dosbox-x
 
-你需在dosbox-x安装目录中的dosbox-x.conf配置文件中启用ne2000并使用pcap，并在realnic = 后面写上”自己的网卡名称”，就像这样
+你需在dosbox-x安装目录中的dosbox-x.conf配置文件中启用ne2000并使用pcap，并在realnic = 后面写上"自己的网卡名称”，就像这样
 
 ```
 [ne2000]
@@ -62,8 +62,7 @@ TCP/dhcp
 
 这样就可以联网了
 
-**Arachne浏览器**
---------------
+## **Arachne****浏览器**
 
 Arachne浏览器是DOS浏览器的首选，因为这个浏览器是本文章中安装第二简单浏览器还是图形浏览器
 
@@ -71,7 +70,7 @@ Arachne浏览器官网下载:[glennmcc.org](http://glennmcc.org/arachne/)
 
 下面我们开始安装arachne，我们已经将安装文件拷贝到了C盘的根目录下，运行一下就可以了。
 
-我们回答两个”Y”，然后我们静静等待
+我们回答两个"Y"，然后我们静静等待
 
 安装很快就结束了，然后进入设置界面，两个问题是memory type和video card，都回车就好了
 
@@ -95,8 +94,7 @@ Arachne浏览器官网下载:[glennmcc.org](http://glennmcc.org/arachne/)
 
 再次说一下，arachne不支持中文，浏览中文网页会看到乱码，不过arachne是个开源项目，有兴趣有能力的读者不妨试试让它支持汉字。
 
-**Dillo for DOS浏览器**
---------------------
+## **Dillo for DOS****浏览器**
 
 这个浏览器是DOS浏览器的第二选择，因为它的更能很多，是跟现代浏览器最像的
 
@@ -106,7 +104,7 @@ Dillo for DOS下载链接：https://www.123pan.com/s/9piDVv-yOkVv.html提取码:
 
 这个浏览器可能需要多一点的内存，可以结合上一期的DOS扩展器文章来使用
 
-将您下载的存档解压缩到目录中 ，例如 C:\\dillodos\\
+将您下载的存档解压缩到目录中 ，例如 C:\\dillodos\\
 
 这个浏览器需要配置一下
 
@@ -129,7 +127,7 @@ set WATTCP.CFG=%DILLO%\ETC
 %DILLO%\bin\dillo.exe %1 %2 %3 %4 %5 %6 %7 %8 %9
 ```
 
-第一个环境变量 DILLO 必须指向 DILLODOS 目录或你命名的任何内容。检查驱动器号以匹配您的环境。
+第一个环境变量 DILLO 必须指向 DILLODOS 目录或你命名的任何内容。检查驱动器号以匹配您的环境。
 
 NANOSCR 变量定义为：
 
@@ -137,9 +135,9 @@ NANOSCR 变量定义为：
 NANOSCR=[SCREEN_WIDTH] [SCREEN_HEIGHT] [SCREEN_PIXTYPE]
 ```
 
-对于SCREEN\_PIXTYPE以下值有效：8888 表示 32 位，888 表示 24 位，565 表示 16 位。24 位值当前未 测试。在 16 位模式下，某些颜色可能无法正确呈现。
+对于SCREEN\_PIXTYPE以下值有效：8888 表示 32 位，888 表示 24 位，565 表示 16 位。24 位值当前未 测试。在 16 位模式下，某些颜色可能无法正确呈现。
 
-要允许使用 SNARF 进行屏幕截图，请将 DILLO.BAT 文件中的像素类型条目设置为 16 位。
+要允许使用 SNARF 进行屏幕截图，请将 DILLO.BAT 文件中的像素类型条目设置为 16 位。
 
 WATTCP.CFG 环境规则变量由 Watt32 TCP/IP 驱动程序读取，并指向 WATTCP.CFG 文件，位于 BIN 子目录中。
 
@@ -159,21 +157,19 @@ WATTCP.CFG 环境规则变量由 Watt32 TCP/IP 驱动程序读取，并指向 WA
 
 然后重启软件就可以浏览中文了吗？实际上浏览网页会死机，估计是硬件配置太低了，有成功的可以发在评论区。
 
-**Links浏览器**
-------------
+## **Links****浏览器**
 
 这是一个纯文本浏览器，它不支持中文
 
-官方下载链接：[Twibright Labs：链接 – 下载](http://links.twibright.com/download.php)
+官方下载链接：[Twibright Labs：链接 - 下载](http://links.twibright.com/download.php)
 
 直接运行目录里的links-2，等一下
 
-如果出现错误：Load error: no DPMI – Get csdpmib.zip ，可以把上一期文章的DPMI接口文件复制到这个软件的安装路径根目录，然后再运行
+如果出现错误：Load error: no DPMI - Get csdpmib.zip ，可以把上一期文章的DPMI接口文件复制到这个软件的安装路径根目录，然后再运行
 
 运行之后如果是黑屏的，把鼠标移动到最上方，然后左键召唤出菜单，点击菜单里的file，然后再点击go to url，输入网页地址就可以浏览网页了
 
-**DosLynx**
------------
+## **DosLynx**
 
 这也是个纯文本浏览器，添加中文的方法是在LYNX.CFG文件中设置“CHARACTER\_SET:euc-cn”
 
@@ -183,8 +179,7 @@ WATTCP.CFG 环境规则变量由 Watt32 TCP/IP 驱动程序读取，并指向 WA
 
 然后再打开doslynx.exe
 
-**结尾**
-------
+## **结尾**
 
 那么本文章中所有浏览器教程到此结束
 
