@@ -150,3 +150,10 @@
     }
   }
 }
+#main-grid {
+    grid-template-rows: auto 1fr auto;
+}
+
+.footer {
+    grid-row: 3;
+}
